@@ -30,7 +30,8 @@ class Elementor_Cards_Activator {
 	 * @since    1.0.0
 	 */
 	public static function activate() {
-
+		if ( ! is_plugin_active( 'elementor/elementor.php' ) ) {
+			wp_die( __( 'Please install and Activate Elementor.', 'elementor-cards' ), 'Plugin dependency check', array( 'back_link' => true ) );
+		}
 	}
-
 }

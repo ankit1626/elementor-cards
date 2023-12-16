@@ -1,5 +1,4 @@
 <?php
-
 /**
  * The plugin bootstrap file
  *
@@ -77,6 +76,5 @@ function run_elementor_cards() {
 
 	$plugin = new Elementor_Cards();
 	$plugin->run();
-
 }
 run_elementor_cards();

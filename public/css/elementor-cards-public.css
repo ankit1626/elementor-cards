@@ -2,3 +2,56 @@
  * All of the CSS for your public-facing functionality should be
  * included in this file.
  */
+ .card,.card-deck,.card-body,.card-header {
+    border-radius: 0px !important;
+    
+ }
+ .card-header {
+    height: 95px;
+    text-align: center;
+    line-height: 95px;
+    padding: 0px !important;
+ }
+ .icon {
+    position: absolute;
+    margin: 0% auto;
+    top: 45px;
+    left: 0;
+    right: 0;
+    height: 90px;
+    width: 90px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    overflow: hidden;
+
+ }
+ .card-body {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-evenly;
+   align-items: center;
+   padding: 45px 8px 16px 8px;
+   height: 350px;
+ }
+ .card {
+   position: relative;
+    margin: 10px !important;
+    min-width: 230px;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    text-decoration: none !important;
+    color: black !important;
+ }
+ .cards-container {
+   width: 100%;
+   padding: 0% 10%;
+ }
+ .card-text{
+  overflow-y: scroll;
+ }
+ .card-text::-webkit-scrollbar{
+   width: 0;
+ }

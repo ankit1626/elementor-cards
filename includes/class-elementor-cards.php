@@ -1,5 +1,4 @@
 <?php
-
 /**
  * The file that defines the core plugin class
  *
@@ -78,7 +77,6 @@ class Elementor_Cards {
 		$this->set_locale();
 		$this->define_admin_hooks();
 		$this->define_public_hooks();
-
 	}
 
 	/**
@@ -103,27 +101,26 @@ class Elementor_Cards {
 		 * The class responsible for orchestrating the actions and filters of the
 		 * core plugin.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-elementor-cards-loader.php';
+		require_once plugin_dir_path( __DIR__ ) . 'includes/class-elementor-cards-loader.php';
 
 		/**
 		 * The class responsible for defining internationalization functionality
 		 * of the plugin.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-elementor-cards-i18n.php';
+		require_once plugin_dir_path( __DIR__ ) . 'includes/class-elementor-cards-i18n.php';
 
 		/**
 		 * The class responsible for defining all actions that occur in the admin area.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-elementor-cards-admin.php';
+		require_once plugin_dir_path( __DIR__ ) . 'admin/class-elementor-cards-admin.php';
 
 		/**
 		 * The class responsible for defining all actions that occur in the public-facing
 		 * side of the site.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-elementor-cards-public.php';
+		require_once plugin_dir_path( __DIR__ ) . 'public/class-elementor-cards-public.php';
 
 		$this->loader = new Elementor_Cards_Loader();
-
 	}
 
 	/**
@@ -140,7 +137,6 @@ class Elementor_Cards {
 		$plugin_i18n = new Elementor_Cards_i18n();
 
 		$this->loader->add_action( 'plugins_loaded', $plugin_i18n, 'load_plugin_textdomain' );
-
 	}
 
 	/**
@@ -153,10 +149,9 @@ class Elementor_Cards {
 	private function define_admin_hooks() {
 
 		$plugin_admin = new Elementor_Cards_Admin( $this->get_plugin_name(), $this->get_version() );
-
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
-
+		$this->loader->add_action( 'elementor/widgets/register', $plugin_admin, 'register_new_widgets' );
 	}
 
 	/**
@@ -169,10 +164,9 @@ class Elementor_Cards {
 	private function define_public_hooks() {
 
 		$plugin_public = new Elementor_Cards_Public( $this->get_plugin_name(), $this->get_version() );
-
+		$this->loader->add_action( 'init', $plugin_public, 'check_dependencies' );
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
-
 	}
 
 	/**
@@ -214,5 +208,4 @@ class Elementor_Cards {
 	public function get_version() {
 		return $this->version;
 	}
-
 }

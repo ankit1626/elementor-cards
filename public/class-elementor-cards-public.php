@@ -1,5 +1,4 @@
 <?php
-
 /**
  * The public-facing functionality of the plugin.
  *
@@ -44,14 +43,13 @@ class Elementor_Cards_Public {
 	 * Initialize the class and set its properties.
 	 *
 	 * @since    1.0.0
-	 * @param      string    $plugin_name       The name of the plugin.
-	 * @param      string    $version    The version of this plugin.
+	 * @param      string $plugin_name       The name of the plugin.
+	 * @param      string $version    The version of this plugin.
 	 */
 	public function __construct( $plugin_name, $version ) {
 
 		$this->plugin_name = $plugin_name;
-		$this->version = $version;
-
+		$this->version     = $version;
 	}
 
 	/**
@@ -72,9 +70,8 @@ class Elementor_Cards_Public {
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
-
-		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/elementor-cards-public.css', array(), $this->version, 'all' );
-
+		wp_register_style( 'bootstrap-css', 'https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css', array(), $this->version, 'all' );
+		wp_register_style( $this->plugin_name . '-css', plugin_dir_url( __FILE__ ) . 'css/elementor-cards-public.css', array( 'bootstrap-css' ), $this->version, 'all' );
 	}
 
 	/**
@@ -97,7 +94,11 @@ class Elementor_Cards_Public {
 		 */
 
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/elementor-cards-public.js', array( 'jquery' ), $this->version, false );
-
 	}
-
+	/** This function check dependenncies */
+	public function check_dependencies() {
+		if ( ! is_plugin_active( 'elementor/elementor.php' ) ) {
+			deactivate_plugins( 'elementor-cards/elementor-cards.php' );
+		}
+	}
 }
