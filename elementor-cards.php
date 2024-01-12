@@ -12,7 +12,7 @@
  * @package           Elementor_Cards
  *
  * @wordpress-plugin
- * Plugin Name:       Bootstrap Style Cards For Elementor 
+ * Plugin Name:       Cards For Elementor 
  * Plugin URI:        https://ankitparekh.in
  * Description:       A card is a flexible and extensible content container. It includes options for headers and footers, a wide variety of content, contextual background colors, and powerful display options.
  * Version:           1.0.0
