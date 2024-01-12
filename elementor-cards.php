@@ -7,17 +7,17 @@
  * registers the activation and deactivation functions, and defines a function
  * that starts the plugin.
  *
- * @link              https://ankitparekh.dv
+ * @link              https://ankitparekh.in
  * @since             1.0.0
  * @package           Elementor_Cards
  *
  * @wordpress-plugin
  * Plugin Name:       Elementor Cards
- * Plugin URI:        https://example.com
+ * Plugin URI:        https://ankitparekh.in
  * Description:       A card is a flexible and extensible content container. It includes options for headers and footers, a wide variety of content, contextual background colors, and powerful display options.
  * Version:           1.0.0
  * Author:            Ankit Parekh
- * Author URI:        https://ankitparekh.dv/
+ * Author URI:        https://ankitparekh.in/
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain:       elementor-cards
