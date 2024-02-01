@@ -70,7 +70,7 @@ class Elementor_Cards_Public {
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
-		wp_register_style( 'bootstrap-css', 'https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css', array(), $this->version, 'all' );
+		wp_register_style( 'bootstrap-css', plugin_dir_url( __FILE__ ) . 'css/bootstrap.min.css', array(), $this->version, 'all' );
 		wp_register_style( $this->plugin_name . '-css', plugin_dir_url( __FILE__ ) . 'css/elementor-cards-public.css', array( 'bootstrap-css' ), $this->version, 'all' );
 	}
 
