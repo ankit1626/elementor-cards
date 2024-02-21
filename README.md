@@ -5,4 +5,4 @@ Introducing the Cards For Elementor plugin for WordPress, a powerful plugin that
 
 ## Demo
 
-[![Watch the video](https://img.youtube.com/vi/FeCThXQCrJI/maxresdefault.jpg)](https://youtu.be/T-D1KVIuvjA)
+[![Watch the video](https://img.youtube.com/vi/FeCThXQCrJI/maxresdefault.jpg)](https://youtu.be/FeCThXQCrJI)
